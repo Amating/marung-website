@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marung Sebaka Technologies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Marung Sebaka Technologies is a South African innovation company focused on inclusive fintech, healthtech and agritech for everyday socio-economic impact." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #f5fafd;
+      --surface:   #ffffff;
+      --surface-alt: #e8f4fb;
+      --border:    #c5dff0;
+      --text:      #0d2244;
+      --muted:     #4a6580;
+      --accent:    #2B8FD4;
+      --accent-soft: #cce6f8;
+      --sky:       #7EC8E3;
+
+      --radius-md: 0.5rem;
+      --radius-lg: 0.85rem;
+      --shadow:    0 8px 28px rgba(43,143,212,0.09);
+
+      --sp2: 0.5rem;
+      --sp3: 0.75rem;
+      --sp4: 1rem;
+      --sp6: 1.5rem;
+      --sp8: 2rem;
+      --sp10: 2.5rem;
+      --sp16: 4rem;
+
+      --xs: 0.75rem;
+      --sm: 0.875rem;
+      --base: 1rem;
+      --lg: 1.125rem;
+      --xl: 1.5rem;
+      --2xl: 2rem;
+
+      --body: "Work Sans", system-ui, sans-serif;
+      --display: "Instrument Serif", "Times New Roman", serif;
+      --width: 1080px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--body);
+      font-size: var(--base);
+      line-height: 1.65;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .page { display: flex; flex-direction: column; min-height: 100vh; }
+
+    /* ── NAV ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245,250,253,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: var(--width);
+      margin: 0 auto;
+      padding: var(--sp3) var(--sp4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp4);
+    }
+
+    .nav-left { display: flex; align-items: center; gap: var(--sp3); }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--sky) 0%, var(--accent) 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(43,143,212,0.25);
+      flex-shrink: 0;
+    }
+    .logo-mark span {
+      font-family: var(--display);
+      font-size: var(--base);
+      color: #fff;
+      font-style: italic;
+    }
+
+    .logo-text { display: flex; flex-direction: column; gap: 0.05rem; }
+    .logo-text-main { font-size: var(--sm); font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--text); }
+    .logo-text-sub  { font-size: var(--xs); color: var(--muted); }
+
+    .nav-links { display: flex; align-items: center; gap: var(--sp4); font-size: var(--sm); }
+    .nav-links a { position: relative; color: var(--muted); padding-bottom: 0.1rem; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; bottom: -0.1rem;
+      width: 0; height: 2px; background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: var(--sm);
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--accent); color: #fff; }
+
+    /* ── SECTIONS ── */
+    main { flex: 1; }
+    .section { padding: var(--sp16) var(--sp4); }
+    .section-alt { background: var(--surface); }
+    .container { max-width: var(--width); margin: 0 auto; }
+
+    .section-header { margin-bottom: var(--sp6); max-width: 42rem; }
+    .section-header h2 {
+      font-family: var(--display);
+      font-size: var(--2xl);
+      line-height: 1.2;
+      margin-bottom: var(--sp3);
+      color: var(--text);
+    }
+    .section-header p { color: var(--muted); font-size: var(--base); }
+
+    /* ── HERO ── */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: var(--sp10);
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: var(--xs);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: var(--sp3);
+    }
+
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(2.3rem, 2rem + 1.6vw, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: var(--sp4);
+      color: var(--text);
+    }
+    .hero-title em { color: var(--accent); font-style: normal; }
+
+    .hero-body {
+      font-size: var(--lg);
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: var(--sp6);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--sp3); align-items: center; }
+
+    .btn-primary {
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-size: var(--sm);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow);
+      transition: background 0.15s, transform 0.12s;
+    }
+    .btn-primary:hover { background: #1a7bbf; transform: translateY(-1px); }
+
+    .btn-secondary {
+      padding: 0.75rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      font-size: var(--sm);
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: border-color 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-aside {
+      background: linear-gradient(145deg, #ffffff 0%, var(--surface-alt) 100%);
+      border-radius: 1.25rem;
+      border: 1px solid var(--border);
+      padding: var(--sp6);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp4);
+    }
+
+    .hero-tagline {
+      font-family: var(--display);
+      font-size: var(--lg);
+      color: var(--text);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .hero-pill-row { display: flex; flex-wrap: wrap; gap: var(--sp2); }
+
+    .pill {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: var(--xs);
+      color: var(--muted);
+      background: var(--surface);
+    }
+    .pill-accent {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero-note {
+      font-size: var(--xs);
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: var(--sp3);
+      line-height: 1.6;
+    }
+
+    /* ── ABOUT ── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: var(--sp8);
+      align-items: start;
+    }
+
+    .about-body p {
+      color: var(--muted);
+      margin-bottom: var(--sp4);
+      font-size: var(--base);
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-card {
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: var(--sp6);
+      box-shadow: var(--shadow);
+    }
+    .about-card h3 { font-size: var(--lg); margin-bottom: var(--sp4); color: var(--text); }
+    .about-card-item { margin-bottom: var(--sp3); }
+    .about-card-item:last-child { margin-bottom: 0; }
+    .about-card-item strong { color: var(--accent); }
+    .about-card-item p { font-size: var(--sm); color: var(--muted); margin-top: 0.15rem; }
+
+    /* ── FOCUS ── */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--sp4);
+    }
+
+    .focus-card {
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: var(--sp6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp3);
+      transition: box-shadow 0.18s, transform 0.18s;
+    }
+    .focus-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+    .focus-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .focus-label {
+      font-size: var(--xs);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .focus-title { font-size: var(--lg); font-weight: 600; color: var(--text); }
+    .focus-copy  { font-size: var(--sm); color: var(--muted); line-height: 1.65; }
+
+    /* ── INCLUSION ── */
+    .inclusion-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: var(--sp8);
+      align-items: start;
+    }
+
+    .inclusion-body p { color: var(--muted); margin-bottom: var(--sp4); }
+    .inclusion-body p:last-child { margin-bottom: 0; }
+
+    .inclusion-list { list-style: none; display: grid; gap: var(--sp3); }
+    .inclusion-list li {
+      padding: var(--sp4);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: var(--sm);
+      color: var(--muted);
+      border-left: 3px solid var(--sky);
+    }
+    .inclusion-tag {
+      font-size: var(--xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.3rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── LEADERSHIP ── */
+    .leader-card {
+      max-width: 42rem;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: var(--sp6);
+      box-shadow: var(--shadow);
+    }
+    .leader-avatar {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sky), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--display);
+      font-size: 1.4rem;
+      color: #fff;
+      font-style: italic;
+      margin-bottom: var(--sp4);
+    }
+    .leader-name { font-size: var(--xl); font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+    .leader-meta {
+      font-size: var(--xs);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: var(--sp4);
+    }
+    .leader-copy { font-size: var(--sm); color: var(--muted); margin-bottom: var(--sp3); }
+    .leader-copy:last-child { margin-bottom: 0; }
+    .leader-tags { display: flex; flex-wrap: wrap; gap: var(--sp2); margin-top: var(--sp4); }
+
+    /* ── CONTACT ── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: var(--sp8);
+      align-items: start;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: var(--sp6);
+      box-shadow: var(--shadow);
+    }
+    .contact-card form { display: grid; gap: var(--sp3); }
+
+    .field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .field label {
+      font-size: var(--xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .field input, .field select, .field textarea {
+      font: inherit;
+      padding: 0.65rem 0.85rem;
+      border-radius: 0.45rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: var(--sm);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .field textarea { min-height: 120px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(43,143,212,0.15);
+      background: #fff;
+    }
+
+    .contact-note { font-size: var(--xs); color: var(--muted); margin-top: var(--sp2); line-height: 1.6; }
+
+    .contact-aside p { color: var(--muted); font-size: var(--sm); margin-bottom: var(--sp4); }
+    .contact-aside p:last-child { margin-bottom: 0; }
+
+    .contact-detail {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--sp4);
+      margin-bottom: var(--sp3);
+    }
+    .contact-detail-label { font-size: var(--xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.2rem; }
+    .contact-detail-val { font-size: var(--sm); color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: var(--sp6) var(--sp4);
+      background: var(--surface);
+    }
+    .footer-inner {
+      max-width: var(--width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp4);
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-brand { font-weight: 700; font-size: var(--sm); color: var(--text); letter-spacing: 0.03em; }
+    .footer-brand span { color: var(--accent); }
+    .footer-meta { font-size: var(--xs); color: var(--muted); margin-top: 0.2rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp4); font-size: var(--xs); color: var(--muted); }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid, .about-layout, .inclusion-grid, .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-aside { order: -1; }
+      .nav-links { display: none; }
+      header { position: static; }
+    }
+
+    @media (max-width: 680px) {
+      .section { padding-block: var(--sp10); }
+      .focus-grid { grid-template-columns: minmax(0, 1fr); }
+      .hero-title { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="logo-mark" aria-hidden="true"><span>M</span></div>
+        <div class="logo-text">
+          <div class="logo-text-main">Marung Sebaka Technologies</div>
+          <div class="logo-text-sub">Inclusive fintech · healthtech · agritech</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#focus">Our Focus</a>
+        <a href="#why">Why Marung</a>
+        <a href="#inclusion">Inclusion</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+        <a href="/demo.html" class="nav-cta" target="_blank">View Demo</a>
+        <a href="#contact" class="nav-cta">Partner Enquiries</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-kicker">South African Innovation Company</div>
+            <h1 class="hero-title">
+              Building inclusive technology for everyday <em>life</em>.
+            </h1>
+            <p class="hero-body">
+              Marung Sebaka Technologies is a South African innovation company focused on fintech, healthtech and agritech solutions that expand access, support participation and strengthen socio-economic progress.
+            </p>
+            <p style="color:var(--muted);font-size:var(--base);margin-bottom:var(--sp6);">
+              We build in sectors where access, dignity and participation matter most, creating practical pathways for people and communities too often underserved by traditional systems.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+                Learn about the company <span>↓</span>
+              </button>
+              <button class="btn-secondary" onclick="document.getElementById('focus').scrollIntoView({behavior:'smooth'})">
+                Explore our focus areas
+              </button>
+              <a href="/demo.html" target="_blank" class="btn-secondary" style="display:inline-flex;align-items:center;gap:0.4rem;text-decoration:none;">
+                View wallet demo <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-aside" aria-label="Marung Sebaka overview">
+            <p class="hero-tagline">"Technology should bring people in, not leave them out."</p>
+            <div class="hero-pill-row">
+              <div class="pill pill-accent">Inclusive innovation</div>
+              <div class="pill">Fintech</div>
+              <div class="pill">Healthtech</div>
+              <div class="pill">Agritech</div>
+              <div class="pill">Socio-economic impact</div>
+              <div class="pill">100% Black Women-Owned</div>
+              <div class="pill">B-BBEE Level 1</div>
+            </div>
+            <p class="hero-note">
+              This website introduces who we are, why we exist and where we are focused. Detailed product, commercial and technical information is shared privately in the appropriate professional settings.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED INNOVATION -->
+    <section class="section section-alt" id="innovation">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-kicker" style="text-align:center;">Featured Innovation</div>
+          <h2>Marung Cloud Wallet</h2>
+          <p>Our flagship fintech initiative, designed to expand digital financial access through a secure, affordable and inclusive technology platform. Marung Cloud Wallet is being developed to help individuals, families, merchants and underserved communities participate more fully in the digital economy.</p>
+        </div>
+
+        <div style="max-width:680px;margin:0 auto;text-align:center;">
+          <p style="font-size:var(--lg);color:var(--text);line-height:1.7;margin-bottom:var(--sp5);">
+            Built for individuals, families, merchants and underserved communities, Marung Cloud Wallet reflects our belief that technology should simplify participation in the economy rather than create barriers to entry.
+          </p>
+          <div style="display:flex;gap:var(--sp3);justify-content:center;flex-wrap:wrap;">
+            <a href="/demo.html" target="_blank" class="btn-primary">View product demo <span>→</span></a>
+            <button class="btn-secondary" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why this model works</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>Who We Are</h2>
+          <p>A South African technology company building with a long-term view of inclusion, access and economic relevance.</p>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-body">
+            <p>
+              Marung Sebaka Technologies is a South African company building with a long-term view of inclusion, access and economic relevance. Our work sits at the intersection of technology and everyday life, with a focus on sectors where better access can create meaningful change.
+            </p>
+            <p>
+              Our public presence is intentionally simple. We speak clearly about purpose, direction and impact, while deeper operational detail is shared privately in the appropriate professional context.
+            </p>
+            <p>
+              Marung is a technology company operating in financial services, not a bank. We leverage regulated financial infrastructure partners to deliver secure, accessible and affordable financial services to individuals, families and businesses across South Africa and the broader African continent.
+            </p>
+            <p>
+              Our focus is not on becoming a bank. Our focus is on innovation, customer experience, financial inclusion and building the next generation of digital financial access for everyone.
+            </p>
+            <blockquote style="margin-top:var(--sp6);padding:var(--sp4) var(--sp6);border-left:3px solid var(--sky);background:var(--accent-soft);border-radius:0 var(--radius-md) var(--radius-md) 0;">
+              <p style="font-family:var(--display);font-style:italic;font-size:var(--lg);color:var(--text);margin:0;">"Technology should not leave people behind."</p>
+              <p style="font-size:var(--xs);color:var(--muted);margin-top:var(--sp2);text-transform:uppercase;letter-spacing:0.1em;">— Madichaba Milosevic, Founder</p>
+            </blockquote>
+            <p style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:linear-gradient(135deg,var(--accent-soft),rgba(126,200,227,0.12));border-radius:var(--radius-md);font-size:var(--base);color:var(--text);line-height:1.7;font-style:italic;">
+              We envision a future where every person, regardless of income, geography or circumstance, can participate fully in the digital economy through accessible technology designed for inclusion.
+              <br /><br />
+              <span style="font-style:normal;font-weight:600;color:var(--accent);">South African innovation with continental relevance.</span>
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3>What we stand for</h3>
+            <div class="about-card-item">
+              <strong>Inclusion</strong>
+              <p>Technology that works for people who are often overlooked by traditional systems.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Integrity</strong>
+              <p>Careful, responsible design that respects regulation, risk and long-term trust.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Impact</strong>
+              <p>Work that aims to move socio-economic indicators, not just metrics on a dashboard.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>South African context</strong>
+              <p>A grounded understanding of local realities, with an eye on regional and global relevance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOCUS -->
+    <section class="section" id="focus">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Focus</h2>
+          <p>Three core domains where inclusive technology can meaningfully shift socio-economic outcomes.</p>
+        </div>
+
+        <div class="focus-grid">
+          <article class="focus-card">
+            <div class="focus-icon">💳</div>
+            <div class="focus-label">Fintech</div>
+            <div class="focus-title">Inclusive financial access</div>
+            <p class="focus-copy">
+              Practical financial inclusion that helps people participate in the economy with greater access, convenience and connection.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-icon">🏥</div>
+            <div class="focus-label">Healthtech</div>
+            <div class="focus-title">Healthier communities</div>
+            <p class="focus-copy">
+              More equitable access to information, support and digital pathways that strengthen communities and improve participation in health systems.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-icon">🌾</div>
+            <div class="focus-label">Agritech</div>
+            <div class="focus-title">Stronger food systems</div>
+            <p class="focus-copy">
+              Technology that improves visibility, resilience and participation across food and farming ecosystems.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY MARUNG -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Marung?</h2>
+          <p>The future of financial services will not be defined by who owns the bank. It will be defined by who creates the best customer experience.</p>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-body">
+            <p>
+              Marung is building the intelligent technology layer that connects people, merchants, financial institutions and payment infrastructure across Africa.
+            </p>
+            <p>
+              By leveraging regulated partners rather than becoming a bank ourselves, we can innovate faster, reduce costs, expand accessibility and focus entirely on the needs of our users.
+            </p>
+            <p style="font-weight:600;color:var(--text);margin-top:var(--sp4);">Our mission is simple:</p>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp3);">
+              <li style="display:flex;align-items:flex-start;gap:var(--sp3);"><span style="color:var(--accent);font-size:var(--lg);line-height:1;flex-shrink:0;">→</span><span>Make digital financial services accessible to everyone.</span></li>
+              <li style="display:flex;align-items:flex-start;gap:var(--sp3);"><span style="color:var(--accent);font-size:var(--lg);line-height:1;flex-shrink:0;">→</span><span>Reduce barriers to participation in the economy.</span></li>
+              <li style="display:flex;align-items:flex-start;gap:var(--sp3);"><span style="color:var(--accent);font-size:var(--lg);line-height:1;flex-shrink:0;">→</span><span>Enable financial inclusion at scale.</span></li>
+              <li style="display:flex;align-items:flex-start;gap:var(--sp3);"><span style="color:var(--accent);font-size:var(--lg);line-height:1;flex-shrink:0;">→</span><span>Create a platform that evolves as technology evolves.</span></li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h3>Our position</h3>
+            <div class="about-card-item">
+              <strong>Not a bank</strong>
+              <p>Marung does not hold deposits, lend money or seek a banking licence. We own the customer experience.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Infrastructure partners provide the rails</strong>
+              <p>Regulated financial infrastructure partners handle compliance, payment processing and settlement.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Asset-light by design</strong>
+              <p>This model allows us to scale rapidly, stay agile and focus entirely on solving customer problems.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>The technology layer</strong>
+              <p>Marung is the future-facing technology layer that connects Africa's financial ecosystem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INCLUSION -->
+    <section class="section section-alt" id="inclusion">
+      <div class="container">
+        <div class="section-header">
+          <h2>Inclusion by Design</h2>
+          <p>For Marung Sebaka Technologies, inclusion is not a slogan. It is a design principle that shapes how we think about people, services and long-term socio-economic change.</p>
+        </div>
+
+        <div class="inclusion-grid">
+          <div class="inclusion-body">
+            <p>
+              We build in sectors where access, dignity and participation matter most. Our approach is grounded in the realities of people and communities that are too often underserved by traditional systems — and we design around that, not away from it.
+            </p>
+          </div>
+
+          <ul class="inclusion-list" aria-label="Inclusion principles">
+            <li>
+              <div class="inclusion-tag">Principle one</div>
+              Build with context, not assumptions.
+            </li>
+            <li>
+              <div class="inclusion-tag">Principle two</div>
+              Design for participation, not exclusion.
+            </li>
+            <li>
+              <div class="inclusion-tag">Principle three</div>
+              Prioritise dignity, trust and long-term relevance.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERSHIPS -->
+    <section class="section section-alt" id="partnerships">
+      <div class="container">
+        <div class="section-header">
+          <h2>Building Through Partnerships</h2>
+          <p>Marung believes meaningful innovation happens through collaboration.</p>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-body">
+            <p>
+              We work alongside established legal, regulatory, infrastructure and technology partners to ensure our solutions are secure, scalable and aligned with industry standards.
+            </p>
+            <p>
+              Our partnership approach allows us to focus on innovation, accessibility and customer experience while leveraging trusted specialists for critical infrastructure and compliance functions.
+            </p>
+            <p>
+              This model is intentional. Rather than attempting to replicate what established institutions have built over decades, we build on top of it — adding the agility, user experience and inclusivity layer that traditional systems have struggled to provide.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3>Partnership principles</h3>
+            <div class="about-card-item">
+              <strong>Regulated infrastructure</strong>
+              <p>Payment processing, compliance and settlement handled by licensed financial partners.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Legal and regulatory alignment</strong>
+              <p>We engage specialist legal counsel and operate within South Africa's financial services regulatory framework.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Technology collaboration</strong>
+              <p>We partner with cloud and technology providers who share our commitment to reliability and scale.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Strategic co-creation</strong>
+              <p>Key partners are engaged as collaborators, not just vendors. Their expertise shapes what we build.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILDING FOR SCALE -->
+    <section class="section" id="scale">
+      <div class="container">
+        <div class="section-header">
+          <h2>Building for Scale</h2>
+          <p>Marung Sebaka Technologies is building for long-term relevance, scalability and impact.</p>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-body">
+            <p>
+              Our approach combines inclusive innovation, strategic partnerships and modern technology to create solutions that can evolve alongside changing customer needs and emerging opportunities.
+            </p>
+            <p>
+              Today, our flagship fintech initiative is Marung Cloud Wallet. Tomorrow, we envision a broader ecosystem of technology solutions that improve participation, accessibility and socio-economic outcomes across multiple sectors.
+            </p>
+            <p>
+              We are actively engaging with leaders across technology, financial services, legal, regulatory and infrastructure domains to build a strong foundation for sustainable growth.
+            </p>
+            <p style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:linear-gradient(135deg,var(--accent-soft),rgba(126,200,227,0.12));border-radius:var(--radius-md);font-size:var(--base);color:var(--text);line-height:1.7;">
+              <strong style="display:block;margin-bottom:var(--sp2);font-size:var(--lg);color:var(--accent);">Built in South Africa. Designed for Africa.</strong>
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3>Our scale pillars</h3>
+            <div class="about-card-item">
+              <strong>Inclusive by design</strong>
+              <p>Every product decision is measured against its ability to include those traditional systems leave behind.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Partnership-led growth</strong>
+              <p>We scale through relationships, not just technology — engaging leaders across multiple domains.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Sector expansion</strong>
+              <p>Fintech first. Then a broader ecosystem across healthtech, agritech and adjacent opportunities.</p>
+            </div>
+            <div class="about-card-item">
+              <strong>Continental ambition</strong>
+              <p>South Africa is the starting point. Africa is the market. Accessible technology is the vehicle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="section section-alt" id="leadership">
+      <div class="container">
+        <div class="section-header">
+          <h2>Leadership</h2>
+          <p>Marung Sebaka Technologies is founder-led and guided by a vision grounded in innovation, responsibility and inclusion.</p>
+        </div>
+
+        <article class="leader-card">
+          <div class="leader-avatar" aria-hidden="true">M</div>
+          <div class="leader-name">Madichaba Milosevic</div>
+          <div class="leader-meta">Founder, Strategist and Social Impact Innovator · Marung Sebaka Technologies (Pty) Ltd · Cape Town</div>
+          <p class="leader-copy">
+            We are committed to building thoughtfully, with a clear understanding of South African realities and the broader opportunity for meaningful impact.
+          </p>
+          <p class="leader-copy" style="font-style:italic;color:var(--accent);">
+            South African. Founder-led. Built with context and long-term purpose.
+          </p>
+          <div class="leader-tags">
+            <div class="pill pill-accent">Founder of Marung Cloud Wallet and Marung Sebaka Technologies</div>
+            <div class="pill">100% Black Women-Owned</div>
+            <div class="pill">B-BBEE Level 1</div>
+            <div class="pill">Cape Town · South Africa</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>For partnership enquiries, strategic discussions or general company information, contact Marung Sebaka Technologies directly. We welcome engagement aligned with innovation, inclusion and long-term impact.</p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-card">
+            <form onsubmit="handleSubmit(event)">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="field">
+                <label for="organisation">Organisation</label>
+                <input id="organisation" name="organisation" type="text" placeholder="Company / institution / community" />
+              </div>
+              <div class="field">
+                <label for="enquiry">Nature of enquiry</label>
+                <select id="enquiry" name="enquiry">
+                  <option value="">Select...</option>
+                  <option>Prospective investor</option>
+                  <option>Strategic partner</option>
+                  <option>Legal / regulatory</option>
+                  <option>Technology collaboration</option>
+                  <option>Media / journalist</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Share a brief outline of how you would like to engage with Marung Sebaka Technologies." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Submit enquiry</button>
+              <p class="contact-note">
+                This form is for professional and strategic engagement. Product-specific, commercial and technical information is shared privately where appropriate. NDA and confidential engagement processes available where appropriate.
+              </p>
+            </form>
+          </div>
+
+          <div class="contact-aside">
+            <div class="contact-detail">
+              <div class="contact-detail-label">Company</div>
+              <div class="contact-detail-val">Marung Sebaka Technologies (Pty) Ltd</div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-label">Location</div>
+              <div class="contact-detail-val">Cape Town, South Africa</div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-label">B-BBEE Status</div>
+              <div class="contact-detail-val">Level 1 · 100% Black Women-Owned</div>
+            </div>
+            <p>
+              We welcome conversations with partners across technology, financial services, health, agriculture, legal, regulatory and research domains who share an interest in inclusive innovation.
+            </p>
+            <p>
+              If your enquiry relates to investment, formal partnership or technical collaboration, please indicate that clearly in your message. Detailed documentation is shared in the right setting and under appropriate confidentiality arrangements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">MARUNG <span>SEBAKA</span> TECHNOLOGIES</div>
+        <div class="footer-meta">© <span id="year"></span> Marung Sebaka Technologies (Pty) Ltd · Reg. 2026/221199/07 · Cape Town, South Africa</div>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#focus">Our Focus</a>
+        <a href="#why">Why Marung</a>
+        <a href="#inclusion">Inclusion</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = "Enquiry submitted ✓";
+    btn.style.background = "#27ae60";
+    btn.disabled = true;
+    setTimeout(() => { e.target.reset(); btn.textContent = "Submit enquiry"; btn.style.background = ""; btn.disabled = false; }, 4000);
+  }
+</script>
+</body>
+</html>
