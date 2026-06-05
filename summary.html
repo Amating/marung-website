@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marung Cloud Wallet — Who We Are</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F4F8FC;color:#0D2244;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.7}
+
+/* PAGE 1 */
+.page{max-width:680px;margin:0 auto;padding:0 0 40px}
+
+/* HEADER */
+.hdr{background:#050D1A;padding:28px 32px;display:flex;align-items:center;gap:14px}
+.logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#7EC8E3,#2B8FD4);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#050D1A;font-family:Georgia,serif;flex-shrink:0}
+.brand-name{font-size:1.1rem;font-weight:700;color:#F0F6FF;font-family:Georgia,serif}
+.brand-sub{font-size:.62rem;color:#6B8CAE;letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
+
+/* HERO BAND */
+.hero{background:#0A1830;padding:32px;border-bottom:3px solid #7EC8E3}
+.hero h1{font-family:Georgia,serif;font-size:1.75rem;font-weight:700;color:#F0F6FF;line-height:1.2;margin-bottom:10px}
+.hero h1 span{color:#7EC8E3}
+.hero p{font-size:.95rem;color:#8BA5BC;line-height:1.85;max-width:520px}
+
+/* STAT ROW */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:#050D1A}
+.stat{padding:18px 12px;text-align:center;border-right:1px solid #1C3049}
+.stat:last-child{border-right:none}
+.stat-val{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:#2DD4A0}
+.stat-lbl{font-size:.65rem;color:#6B8CAE;margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
+
+/* SECTIONS */
+.body{padding:28px 32px;background:#ffffff}
+.body + .body{border-top:1px solid #E0ECF4}
+.sec-tag{font-size:.62rem;color:#2B8FD4;letter-spacing:.18em;text-transform:uppercase;font-family:'Courier New',monospace;margin-bottom:10px}
+.sec-h{font-family:Georgia,serif;font-size:1.2rem;font-weight:700;color:#050D1A;margin-bottom:12px}
+.sec-body{font-size:.93rem;color:#3A5A72;line-height:1.9}
+.sec-body strong{color:#050D1A;font-weight:600}
+
+/* CALLOUT */
+.callout{background:#EEF7FB;border-left:4px solid #7EC8E3;border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;font-size:.9rem;color:#0D2244;line-height:1.8}
+.callout.gold{background:#FFF8E8;border-left-color:#C9A84C;color:#5A3E00}
+.callout.green{background:#F0FBF6;border-left-color:#2DD4A0;color:#0D3322}
+
+/* FEATURE LIST */
+.feat-list{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.feat{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;background:#F4F8FC;border-radius:10px;border:1px solid #E0ECF4}
+.feat-ic{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.feat-t{font-size:.92rem;font-weight:600;color:#050D1A;margin-bottom:2px}
+.feat-b{font-size:.83rem;color:#6B8CAE;line-height:1.65}
+
+/* PEOPLE GRID */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+.person{background:#F4F8FC;border:1px solid #E0ECF4;border-radius:10px;padding:14px}
+.person-ic{font-size:1.3rem;margin-bottom:6px}
+.person-t{font-size:.9rem;font-weight:600;color:#050D1A;margin-bottom:3px}
+.person-b{font-size:.8rem;color:#6B8CAE;line-height:1.6}
+.person-save{font-size:.7rem;color:#2DD4A0;margin-top:6px;font-weight:600}
+
+/* PAGE BREAK */
+.page-break{height:32px;background:#F4F8FC;border-top:2px dashed #E0ECF4;display:flex;align-items:center;justify-content:center}
+.page-break span{font-size:.65rem;color:#B0C8D8;letter-spacing:.12em;text-transform:uppercase;font-family:'Courier New',monospace}
+
+/* PAGE 2 DARK BAND */
+.dark-band{background:#050D1A;padding:24px 32px}
+.dark-band h2{font-family:Georgia,serif;font-size:1.1rem;font-weight:700;color:#F0F6FF;margin-bottom:6px}
+.dark-band p{font-size:.88rem;color:#6B8CAE;line-height:1.85}
+.dark-band p strong{color:#7EC8E3}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:4px}
+.tl-item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #E0ECF4}
+.tl-item:last-child{border-bottom:none}
+.tl-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.tl-dot.done{background:#2DD4A0}
+.tl-dot.next{background:#7EC8E3}
+.tl-dot.future{background:#E0ECF4;border:2px solid #B0C8D8}
+.tl-date{font-family:'Courier New',monospace;font-size:.7rem;color:#6B8CAE;min-width:90px;flex-shrink:0;margin-top:2px}
+.tl-t{font-size:.92rem;font-weight:600;color:#050D1A;margin-bottom:2px}
+.tl-b{font-size:.82rem;color:#6B8CAE;line-height:1.6}
+
+/* QUOTE */
+.quote-band{background:#0A1830;padding:24px 32px}
+.quote-band p{font-family:Georgia,serif;font-size:1rem;font-style:italic;color:#EDD98A;line-height:1.8}
+.quote-band cite{display:block;margin-top:8px;font-size:.72rem;color:#6B8CAE;font-style:normal;font-family:'Courier New',monospace}
+
+/* FOOTER */
+.footer{background:#050D1A;padding:24px 32px;border-top:3px solid #7EC8E3}
+.footer-t{font-family:Georgia,serif;font-size:.95rem;font-weight:700;color:#F0F6FF;margin-bottom:8px}
+.footer-body{font-size:.78rem;color:#3A5A72;line-height:2;font-family:'Courier New',monospace}
+.footer-body a{color:#7EC8E3;text-decoration:none}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{background:rgba(45,212,160,0.08);border:1px solid rgba(45,212,160,0.2);border-radius:100px;padding:3px 10px;font-size:.68rem;color:#2DD4A0;font-family:'Courier New',monospace}
+
+@media(max-width:500px){
+  .people{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr 1fr}
+  .hero h1{font-size:1.4rem}
+  .hdr,.body,.dark-band,.quote-band,.footer{padding-left:20px;padding-right:20px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="logo">M</div>
+  <div>
+    <div class="brand-name">Marung Cloud Wallet</div>
+    <div class="brand-sub">Marung Sebaka Technologies · South Africa</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Millions of South Africans still pay too much<br>to <span>move and receive money.</span></h1>
+  <p>Marung provides one low-cost digital wallet, accessible from any mobile phone, with no bank account required. One wallet. Any phone. Any bank.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-val">R10</div><div class="stat-lbl">Per month · flat</div></div>
+  <div class="stat"><div class="stat-val">R0</div><div class="stat-lbl">Per transaction</div></div>
+  <div class="stat"><div class="stat-val">Any phone</div><div class="stat-lbl">No smartphone</div></div>
+</div>
+
+<!-- WHAT IS MARUNG -->
+<div class="body">
+  <div class="sec-tag">What Is Marung?</div>
+  <div class="sec-h">A cloud-native financial access platform built for Africa's evolving digital economy.</div>
+  <p class="sec-body">Unlike traditional banks, Marung does not seek to hold deposits, lend money or operate as a licensed bank. Instead, Marung partners with regulated financial infrastructure providers to deliver digital wallet services, payments, financial access and future embedded financial solutions.</p>
+  <div class="callout" style="margin-top:16px">This asset-light approach allows Marung to remain agile, scale rapidly, adopt emerging technologies and focus on solving customer problems while leveraging trusted partners for regulatory compliance and payment infrastructure.</div>
+  <p class="sec-body" style="margin-top:16px"><strong>Marung owns the customer experience. Infrastructure partners provide the rails. Together, they create a more inclusive financial ecosystem.</strong></p>
+</div>
+
+<!-- THE PROBLEM -->
+<div class="body">
+  <div class="sec-tag">The Problem</div>
+  <div class="sec-h">Money goes digital. Then it goes back to cash.</div>
+  <p class="sec-body">In 2025, FNB alone processed <strong>69 million transactions worth R43 billion</strong> through its eWallet product. Every single one forced the recipient to withdraw cash — an ATM, a retailer queue, a PIN that expires in 16 hours. The digital journey ended every time, for every person.</p>
+  <div class="callout gold" style="margin-top:16px">This is not an FNB problem. It is the architecture of the entire South African informal payment system. Every major bank operates in its own silo. Millions of people receive money digitally and are immediately pushed back to cash.</div>
+</div>
+
+<!-- THE SOLUTION -->
+<div class="body">
+  <div class="sec-tag">The Solution</div>
+  <div class="sec-h">Marung changes one thing. The money stays digital.</div>
+  <div class="feat-list">
+    <div class="feat"><div class="feat-ic">📱</div><div><div class="feat-t">Works on any phone</div><div class="feat-b">Dial a simple code — no app, no data, no smartphone. Any phone, any network. Wallet created in under a minute.</div></div></div>
+    <div class="feat"><div class="feat-ic">💸</div><div><div class="feat-t">Receive from any South African bank</div><div class="feat-b">Anyone with a bank account sends to your Marung number. Money arrives and stays digital — no ATM withdrawal forced.</div></div></div>
+    <div class="feat"><div class="feat-ic">💳</div><div><div class="feat-t">Spend anywhere with a virtual card</div><div class="feat-b">Every wallet includes a virtual Mastercard. Pay at any shop, online or in-store, informal traders and spaza shops.</div></div></div>
+    <div class="feat"><div class="feat-ic">🌍</div><div><div class="feat-t">Send across SADC — included in R10/month</div><div class="feat-b">Lesotho, Mozambique, Zimbabwe and more. No percentage taken. No extra charge. Ever.</div></div></div>
+  </div>
+</div>
+
+<!-- WHO IT IS FOR -->
+<div class="body">
+  <div class="sec-tag">Who Marung Is For</div>
+  <div class="sec-h">Built for real people with real needs.</div>
+  <div class="people">
+    <div class="person"><div class="person-ic">🏠</div><div class="person-t">Domestic Workers</div><div class="person-b">Receive salary. Send home to Lesotho at no extra cost. No ATM queue.</div><div class="person-save">Saves up to R1,524/year</div></div>
+    <div class="person"><div class="person-ic">🚗</div><div class="person-t">Gig Workers</div><div class="person-b">Uber, Bolt, delivery — earnings go straight to your wallet. No fees eating your income.</div><div class="person-save">Zero transaction fees</div></div>
+    <div class="person"><div class="person-ic">🎓</div><div class="person-t">Students</div><div class="person-b">Receive allowances from family. Pay rent and food digitally. No bounce fees.</div><div class="person-save">No debit order fees</div></div>
+    <div class="person"><div class="person-ic">🌍</div><div class="person-t">SADC Nationals</div><div class="person-b">Send money home every month. No percentage. No hidden charges. Included.</div><div class="person-save">R0 corridor fee always</div></div>
+    <div class="person"><div class="person-ic">🧑‍🤝‍🧑</div><div class="person-t">Stokvels</div><div class="person-b">Distribute stokvel funds instantly to every member on distribution day. No cash risk.</div><div class="person-save">Instant digital distribution</div></div>
+    <div class="person"><div class="person-ic">💼</div><div class="person-t">Small Employers</div><div class="person-b">Pay your domestic worker or staff digitally every week. No bank account needed on their side.</div><div class="person-save">Digital payroll any phone</div></div>
+  </div>
+</div>
+
+<!-- PAGE BREAK -->
+<div class="page-break"><span>Page 2 of 2</span></div>
+
+<!-- THE STORY -->
+<div class="dark-band">
+  <h2>The Story Behind Marung</h2>
+  <p>In April 2025, our founder received money via FNB eWallet. It arrived digitally — on her phone, in seconds. And then the system did what it always does: it told her to go to an ATM to withdraw cash.<br><br>That moment became a question she could not stop asking. She spent two years researching the answer — studying SA payment regulations, completing cloud computing training, learning from domestic workers and SADC nationals about how they actually move money. She built the first working prototype <strong>herself</strong> — before any external funding, before any investors, before asking anyone for help.<br><br>Marung Sebaka Technologies was incorporated in March 2026. The name means <strong>a place in the clouds</strong> — accessible to everyone, from anywhere, on any phone.</p>
+</div>
+
+<!-- WHERE WE ARE -->
+<div class="body">
+  <div class="sec-tag">Where Marung Is Today</div>
+  <div class="sec-h">Past concept. In motion.</div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot done"></div><div class="tl-date">Mar 2026</div><div><div class="tl-t">Company incorporated</div><div class="tl-b">Marung Sebaka Technologies (Pty) Ltd · Reg. 2026/221199/07</div></div></div>
+    <div class="tl-item"><div class="tl-dot done"></div><div class="tl-date">Apr–May 2026</div><div><div class="tl-t">Working prototype built and tested</div><div class="tl-b">Built by the founder personally — before any external funding</div></div></div>
+    <div class="tl-item"><div class="tl-dot done"></div><div class="tl-date">May 2026</div><div><div class="tl-t">Trademarks filed · legal counsel identified</div><div class="tl-b">CMS RM Partners · one of the world's largest international law firms</div></div></div>
+    <div class="tl-item"><div class="tl-dot next"></div><div class="tl-date">Jun 2026</div><div><div class="tl-t">Seed round closing</div><div class="tl-b">Pre-seed funding round · infrastructure partners being engaged</div></div></div>
+    <div class="tl-item"><div class="tl-dot future"></div><div class="tl-date">Oct 2026</div><div><div class="tl-t">MVP Launch</div><div class="tl-b">Pilot launch · Diepsloot, Gauteng and Danoon, Cape Town</div></div></div>
+    <div class="tl-item"><div class="tl-dot future"></div><div class="tl-date">Nov 2026</div><div><div class="tl-t">Public Launch — AfricaCom</div><div class="tl-b">Africa Tech Festival · CTICC Cape Town · 800+ fintech delegates</div></div></div>
+    <div class="tl-item"><div class="tl-dot future"></div><div class="tl-date">Nov 2026</div><div><div class="tl-t">Lesotho SADC Corridor Live</div><div class="tl-b">First SADC corridor · R0 fee · December remittance peak</div></div></div>
+  </div>
+</div>
+
+<!-- STRATEGIC PROGRESS -->
+<div class="body">
+  <div class="sec-tag">Strategic Progress</div>
+  <div class="sec-h">Real milestones. Already in motion.</div>
+  <div class="feat-list">
+    <div class="feat"><div class="feat-ic">⚖️</div><div><div class="feat-t">CMS RM Partners appointed as legal counsel</div><div class="feat-b">One of the world's largest international law firms — guiding regulatory and commercial strategy.</div></div></div>
+    <div class="feat"><div class="feat-ic">☁️</div><div><div class="feat-t">AWS partner engagement underway</div><div class="feat-b">Cloud infrastructure partnership discussions active — targeting AWS Africa (Cape Town) Region af-south-1.</div></div></div>
+    <div class="feat"><div class="feat-ic">🔗</div><div><div class="feat-t">Payment infrastructure partner discussions underway</div><div class="feat-b">Regulated payment infrastructure partner engaged. NDA in place — disclosure at appropriate stage.</div></div></div>
+    <div class="feat"><div class="feat-ic">🎤</div><div><div class="feat-t">Africa Tech Festival launch confirmed — November 2026</div><div class="feat-b">AfricaCom · CTICC Cape Town · 800+ fintech delegates. Public launch platform secured.</div></div></div>
+    <div class="feat"><div class="feat-ic">🇿🇦</div><div><div class="feat-t">100% Black Women-Owned · Level 1 B-BBEE · Incorporated March 2026</div><div class="feat-b">Marung Sebaka Technologies (Pty) Ltd · Reg. 2026/221199/07 · Cape Town, South Africa.</div></div></div>
+  </div>
+</div>
+
+<!-- THE NUMBERS -->
+<div class="body">
+  <div class="sec-tag">The Market</div>
+  <div class="sec-h">A large, underserved market. A simple solution.</div>
+  <div class="callout green">30 million+ South Africans are unbanked, underbanked, or paying per-transaction fees every time they move money. Marung's flat-fee model targets less than 1% of this addressable market to reach a sustainable business — a deliberately conservative entry point into a large and growing opportunity.</div>
+  <p class="sec-body" style="margin-top:16px">The comparable companies — <strong>Wave in West Africa ($1.7 billion)</strong>, <strong>TymeBank in South Africa ($1.5 billion)</strong>, <strong>Moniepoint in Nigeria ($1 billion)</strong> — all built on the same financial inclusion model. Marung is the South African equivalent with a SADC corridor strategy none of them have.</p>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-band">
+  <p>"Technology should not leave people behind. Marung is not building another wallet. Marung is building Africa's Financial Address Platform."</p>
+  <cite>— Madichaba Milosevic · Founder & Director · Marung Sebaka Technologies</cite>
+</div>
+
+<!-- DEMO CTA -->
+<div style="background:#0A1830;padding:28px 32px;text-align:center;border-top:1px solid #1C3049">
+  <div style="font-size:.65rem;color:#2DD4A0;letter-spacing:.18em;text-transform:uppercase;font-family:'Courier New',monospace;margin-bottom:10px">Interactive Product Demo</div>
+  <p style="font-size:.95rem;color:#8BA5BC;margin-bottom:20px;line-height:1.7">See the wallet in action — Welcome, Dashboard, Send Money and Receive Money screens.</p>
+  <a href="/demo.html" target="_blank" style="display:inline-block;background:#2B8FD4;color:#F0F6FF;font-size:.95rem;font-weight:700;padding:14px 36px;border-radius:10px;text-decoration:none;font-family:'Segoe UI',Arial,sans-serif;letter-spacing:.02em">Test the Wallet Demo →</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-t">Marung Sebaka Technologies (Pty) Ltd</div>
+  <div class="footer-body">
+    Reg. 2026/221199/07 · Incorporated 13 March 2026 · Cape Town, South Africa<br>
+    <a href="mailto:madichaba@marungsebaka.co.za">madichaba@marungsebaka.co.za</a> · marungsebaka.co.za
+  </div>
+  <div class="tags">
+    <span class="tag">100% Black Women-Owned</span>
+    <span class="tag">Level 1 B-BBEE</span>
+    <span class="tag">Cape Town · South Africa</span>
+    <span class="tag">Internal Pilot Oct 2026</span>
+    <span class="tag">Public Launch Nov 2026</span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
